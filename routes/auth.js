@@ -29,6 +29,7 @@ router.post("/login",async(req,res)=>{
     const originalPassword=hashedPassword.toString(CryptoJS.enc.Utf8)
     originalPassword!=req.body.password && res.status(401).json("Wrong Credential!")
 
+    //verify using JWT
     const accessToken=jwt.sign({
         id:user._id,
         isAdmin:user.isAdmin,
@@ -43,6 +44,8 @@ router.post("/login",async(req,res)=>{
         res.status(500).json(err)
     }
 })
+
+
 
 
 module.exports=router;
