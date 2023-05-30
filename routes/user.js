@@ -53,7 +53,7 @@ router.get("/findall", verifyTokenAndAdmin, async (req, res) => {
   const query = req.query.new;
   try {
     const users = query
-      ? await User.find().sort({ _id: -1 }).limit(1)
+      ? await User.find().sort({ _id: -1 }).limit(5)
       : await User.find();
     res.status(200).json(users);
   } catch (err) {
@@ -62,7 +62,7 @@ router.get("/findall", verifyTokenAndAdmin, async (req, res) => {
 });
 
 //STATS
-router.get("/stat", verifyTokenAndAdmin, async (req, res) => {
+router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
   const date = new Date();
   const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
   try {
