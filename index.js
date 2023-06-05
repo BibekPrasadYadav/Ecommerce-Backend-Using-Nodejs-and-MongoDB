@@ -27,6 +27,8 @@ mongoose.connect(
         app.use("/api/orders",orderRoute);
         app.use("/api/carts",cartRoute);
         app.use("/api/checkout",stripeRoute)
+
+        
        
 app.listen(process.env.PORT || 5000,()=>{
     console.log("Server started at port 5000")
