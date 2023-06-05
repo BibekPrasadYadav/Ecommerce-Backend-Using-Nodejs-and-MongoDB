@@ -1,4 +1,4 @@
-
+import { BASE_URL } from "./routes/page"
 const express=require("express")
 const cors=require("cors")
 const app=express()
@@ -23,7 +23,7 @@ mongoose.connect(
 
         app.use("/api/users",userRoute);
         app.use("/api/auth",authRoute);
-        app.use("/api/products",productRoute);
+        app.use(`${BASE_URL}/api/products`,productRoute);
         app.use("/api/orders",orderRoute);
         app.use("/api/carts",cartRoute);
         app.use("/api/checkout",stripeRoute)

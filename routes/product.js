@@ -1,4 +1,4 @@
-import { BASE_URL } from "./page";
+
 const {
     verifyTokenAndAuthorization,
     verifyTokenAndAdmin,
@@ -57,7 +57,7 @@ router.get("/find/:id", async (req, res) => {
 
 
   //GET ALL USER
-router.get(`${BASE_URL}/findall`, async (req, res) => {
+router.get("/findall", async (req, res) => {
     const qNew = req.query.new;
     const qCategory=req.query.category;
     try {
