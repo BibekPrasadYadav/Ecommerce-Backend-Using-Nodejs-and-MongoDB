@@ -1,10 +1,11 @@
+import { BASE_URL } from "./page";
 const {
     verifyTokenAndAuthorization,
     verifyTokenAndAdmin,
   } = require("./verifyToken");
   const Product = require("../models/Product");
   const router = require("express").Router();
-  import { BASE_URL } from "./page";
+ 
 
 //ADD NEW PRODUCT
   router.post("/",verifyTokenAndAdmin,async(req,res)=>{
