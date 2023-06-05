@@ -1,4 +1,5 @@
-import { BASE_URL } from "./routes/page"
+
+const BASE_URL=require("./routes/page")
 const express=require("express")
 const cors=require("cors")
 const app=express()
