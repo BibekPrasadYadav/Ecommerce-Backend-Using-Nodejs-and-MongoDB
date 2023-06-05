@@ -10,7 +10,11 @@ const UserSchema=new mongoose.Schema(
             type:Boolean,
             default:false,
         },
-        
+        fullname:{type:String},
+        img:{type:String },
+        phone:{type:Number},
+        address:{type:String}
+
     },
     {timestamps:true}
 );

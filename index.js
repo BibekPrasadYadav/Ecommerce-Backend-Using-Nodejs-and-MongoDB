@@ -1,4 +1,4 @@
-const { error } = require("console");
+
 const express=require("express")
 const cors=require("cors")
 const app=express()
@@ -12,9 +12,10 @@ const orderRoute=require("./routes/order")
 const cartRoute=require("./routes/cart")
 const stripeRoute=require("./routes/stripe")
 
-const { json } = require("body-parser");
+const bodyParser = require("body-parser");
 dotenv.config();
 app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(
     process.env.MONGO_URL)
     .then(()=>console.log("DBconnection Successful")).catch((err)=>{
@@ -26,6 +27,7 @@ mongoose.connect(
         app.use("/api/orders",orderRoute);
         app.use("/api/carts",cartRoute);
         app.use("/api/checkout",stripeRoute)
+       
 app.listen(process.env.PORT || 5000,()=>{
     console.log("Server started at port 5000")
 })
