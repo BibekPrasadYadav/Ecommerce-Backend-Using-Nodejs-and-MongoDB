@@ -4,6 +4,7 @@ const {
   } = require("./verifyToken");
   const Product = require("../models/Product");
   const router = require("express").Router();
+  import { BASE_URL } from "./page";
 
 //ADD NEW PRODUCT
   router.post("/",verifyTokenAndAdmin,async(req,res)=>{
@@ -55,7 +56,7 @@ router.get("/find/:id", async (req, res) => {
 
 
   //GET ALL USER
-router.get("/findall", async (req, res) => {
+router.get(`${BASE_URL}/findall`, async (req, res) => {
     const qNew = req.query.new;
     const qCategory=req.query.category;
     try {
