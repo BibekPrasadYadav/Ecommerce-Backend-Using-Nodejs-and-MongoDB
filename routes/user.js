@@ -49,7 +49,7 @@ router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
 });
 
 //GET ALL USER
-router.get("/findall", verifyTokenAndAdmin, async (req, res) => {
+router.get("/findall", async (req, res) => {
   const query = req.query.new;
   try {
     const users = query
