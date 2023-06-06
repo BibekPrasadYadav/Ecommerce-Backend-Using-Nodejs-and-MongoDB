@@ -7,7 +7,7 @@ const Order = require("../models/Order");
 const router = require("express").Router();
 
 //ADD NEW ORDER
-router.post("/", verifyToken, async (req, res) => {
+router.post("/",  async (req, res) => {
   const newOrder = new Order(req.body);
 
   try {
