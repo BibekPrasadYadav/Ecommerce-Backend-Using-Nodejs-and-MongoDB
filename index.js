@@ -20,7 +20,7 @@ mongoose.connect(
     process.env.MONGO_URL)
     .then(()=>console.log("DBconnection Successful")).catch((err)=>{
         console.log(err)});
-
+ 
         app.use("/api/users",userRoute);
         app.use("/api/auth",authRoute);
         app.use("/api/products",productRoute);
