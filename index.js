@@ -11,7 +11,7 @@ const productRoute=require("./routes/product")
 const orderRoute=require("./routes/order")
 const cartRoute=require("./routes/cart")
 const stripeRoute=require("./routes/stripe")
-
+ 
 const bodyParser = require("body-parser");
 dotenv.config();
 app.use(express.json())
