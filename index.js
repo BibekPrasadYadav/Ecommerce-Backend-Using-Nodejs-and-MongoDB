@@ -5,7 +5,7 @@ const app=express()
 app.use(cors())
 const mongoose=require("mongoose")
 const dotenv=require("dotenv")
-const userRoute=require("./routes/user");
+const userRoute=require("./routes/user"); 
 const authRoute=require("./routes/auth")
 const productRoute=require("./routes/product")
 const orderRoute=require("./routes/order")
